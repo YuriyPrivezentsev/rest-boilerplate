@@ -15,7 +15,7 @@ public class SampleController {
     @Autowired
     private SampleService service;
 
-    @RequestMapping(method = RequestMethod.GET, path = "/hello/{name}")
+    @RequestMapping(method = RequestMethod.GET, path = {"/hello/{name}", "/hello"})
     public SampleResponse basicGet(@PathVariable(name = "name", required = false) String name){
         return service.compileGreeting(name);
     }
